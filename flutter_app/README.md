@@ -1,0 +1,4 @@
+# Flutter client
+Set `apiBaseUrl` in `lib/app_config.dart` to your deployed HTTPS backend URL. Then run `flutter pub get` and `flutter build apk --release`.
+
+**Known MVP limitations:** the conversation screen currently calls an HTTP message-send endpoint, but the backend in this starter intentionally sends messages through authenticated Socket.IO only. Add a matching HTTP POST route or connect Socket.IO in the Flutter screen before expecting message sending to work. This is intentionally documented rather than pretending the feature is complete. E2EE, groups UI, media, push notifications, and translation are not implemented yet.
