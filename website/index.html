@@ -10,7 +10,7 @@
 </head>
 <body>
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="GlobalChat home"><span class="logo-mark"><span>G</span></span><span>Global<span class="brand-accent">Chat</span></span></a>
+    <a class="brand" href="#top" aria-label="GlobalChat home"><span class="logo-mark" data-app-logo><span>G</span></span><span class="brand-name">GlobalChat</span></a>
     <nav aria-label="Main navigation">
       <a href="#features">Features</a>
       <a href="#privacy">Privacy</a>
@@ -19,16 +19,17 @@
   </header>
 
   <main>
+    <div id="remoteAnnouncement" class="remote-announcement" hidden></div><div id="maintenanceNotice" class="remote-announcement maintenance" hidden>GlobalChat is in maintenance mode. Some features may be temporarily unavailable.</div>
     <section class="hero shell">
       <div class="hero-copy">
         <div class="eyebrow"><span class="eyebrow-dot"></span> A little closer, wherever you are</div>
         <h1>Good conversations.<br><span>Zero borders.</span></h1>
-        <p class="hero-lead">Find your people with a simple numeric ID. Start a one-to-one chat or bring everyone together in a group.</p>
+        <p class="hero-lead">Find your people by phone number or GlobalChat ID. Start a one-to-one chat or bring everyone together in a group.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#download">Explore the app <span aria-hidden="true">→</span></a>
           <a class="button button-ghost" href="#features"><span class="play-icon" aria-hidden="true">▶</span> Discover features</a>
         </div>
-        <div class="hero-note"><span class="note-check">✓</span> No phone number needed to find a friend</div>
+        <div class="hero-note"><span class="note-check">✓</span> Phone-based sign-in · No OTP yet</div>
       </div>
 
       <div class="hero-visual" aria-label="Illustration of a GlobalChat conversation">
@@ -58,8 +59,8 @@
     <section id="features" class="features-section shell">
       <div class="section-heading"><div class="section-kicker">LESS FRICTION, MORE CONNECTION</div><h2>Everything starts with <span>hello.</span></h2><p>A simpler way to find friends and keep conversations moving.</p></div>
       <div class="feature-grid">
-        <article class="feature-card feature-purple"><div class="feature-icon">#</div><div class="feature-tag">YOUR ID, YOUR CHOICE</div><h3>Find people by ID</h3><p>Share your unique numeric ID and connect without having to give out your phone number.</p><span class="card-decoration decoration-hash">#</span></article>
-        <article class="feature-card feature-blue"><div class="feature-icon">☷</div><div class="feature-tag">ONE-TO-ONE OR EVERYONE</div><h3>Chats that bring you closer</h3><p>Keep a private conversation going or create a group using the IDs of the people you want to invite.</p><span class="card-decoration decoration-chat">•••</span></article>
+        <article class="feature-card feature-purple"><div class="feature-icon">#</div><div class="feature-tag">YOUR ID, YOUR CHOICE</div><h3>Find people by ID</h3><p>Sign in with your phone number, then share your GlobalChat ID to help friends find the right account.</p><span class="card-decoration decoration-hash">#</span></article>
+        <article class="feature-card feature-blue"><div class="feature-icon">☷</div><div class="feature-tag">ONE-TO-ONE OR EVERYONE</div><h3>Chats that bring you closer</h3><p>Keep a private conversation going or create a group using the phone numbers or IDs of the people you want to invite.</p><span class="card-decoration decoration-chat">•••</span></article>
         <article class="feature-card feature-mint"><div class="feature-icon">✦</div><div class="feature-tag">BUILT TO EVOLVE</div><h3>A fresh start for messaging</h3><p>A clear, friendly foundation designed to grow as more features are implemented and tested.</p><span class="card-decoration decoration-spark">✦</span></article>
       </div>
     </section>
@@ -73,7 +74,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="#top"><span class="logo-mark small-logo"><span>G</span></span> Global<span class="brand-accent">Chat</span></a><span class="copyright">© <span id="year"></span> GlobalChat. Made for meaningful connections.</span><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></footer>
+  <footer class="site-footer"><a class="footer-brand" href="#top"><span class="logo-mark small-logo" data-app-logo><span>G</span></span> <span class="footer-name">GlobalChat</span></a><span class="copyright">© <span id="year"></span> GlobalChat. Made for meaningful connections.</span><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></footer>
   <script src="config.js"></script><script src="app.js"></script>
 </body>
 </html>

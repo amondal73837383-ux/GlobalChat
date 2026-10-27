@@ -1,4 +1,12 @@
-# Flutter client
-Set `apiBaseUrl` in `lib/app_config.dart` to your deployed HTTPS backend URL. Then run `flutter pub get` and `flutter build apk --release`.
+# GlobalChat Flutter app
 
-**Known MVP limitations:** the conversation screen currently calls an HTTP message-send endpoint, but the backend in this starter intentionally sends messages through authenticated Socket.IO only. Add a matching HTTP POST route or connect Socket.IO in the Flutter screen before expecting message sending to work. This is intentionally documented rather than pretending the feature is complete. E2EE, groups UI, media, push notifications, and translation are not implemented yet.
+This client supports phone-number registration/login (without OTP for now), secure persisted sessions, direct chats found by phone number or GlobalChat ID, group creation, saved text messages, Socket.IO live updates, voice-note recording/playback, and supported remote app branding.
+
+## Setup
+
+1. Install Flutter stable and Android Studio.
+2. Read `ANDROID_SETUP.md` to generate the Android platform folder and add INTERNET/RECORD_AUDIO permissions.
+3. Confirm `lib/app_config.dart` points to the deployed HTTPS backend.
+4. Run `flutter pub get`, `flutter analyze`, and `flutter build apk --release`.
+
+The app is not end-to-end encrypted and phone ownership is not verified because OTP is not enabled. Voice notes are stored in MongoDB in this MVP, so keep them short and monitor database quotas.

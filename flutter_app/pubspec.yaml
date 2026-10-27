@@ -11,6 +11,9 @@ dependencies:
   socket_io_client: ^3.0.2
   shared_preferences: ^2.3.3
   flutter_secure_storage: ^9.2.2
+  record: ^6.0.0
+  path_provider: ^2.1.5
+  audioplayers: ^6.1.0
   cupertino_icons: ^1.0.8
 dev_dependencies:
   flutter_test:

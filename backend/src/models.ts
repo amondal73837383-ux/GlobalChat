@@ -3,6 +3,8 @@ import mongoose, { Schema } from 'mongoose';
 const UserSchema = new Schema({
   userId: { type: String, required: true, unique: true, index: true },
   displayName: { type: String, required: true, trim: true, maxlength: 50 },
+  phoneNumber: { type: String, unique: true, sparse: true, index: true },
+  avatarUrl: { type: String, default: '', maxlength: 500 },
   passwordHash: { type: String, required: true, select: false },
   role: { type: String, enum: ['user', 'admin'], default: 'user' },
   blocked: { type: Boolean, default: false },
@@ -21,6 +23,9 @@ const MessageSchema = new Schema({
   conversationId: { type: Schema.Types.ObjectId, ref: 'Conversation', required: true, index: true },
   senderId: { type: String, required: true, index: true },
   text: { type: String, required: true, maxlength: 4000 },
+  messageType: { type: String, enum: ['text', 'voice'], default: 'text' },
+  audioData: { type: String, default: '', maxlength: 2500000, select: false },
+  audioMimeType: { type: String, default: 'audio/mp4' },
   createdAt: { type: Date, default: Date.now },
   clientMessageId: { type: String, default: '' }
 });
