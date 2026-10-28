@@ -16,3 +16,7 @@ Not run / not verified:
 - No live MongoDB integration or independent security audit was performed.
 
 Use the exact steps in `README.md`. Do not publish an APK unless `BUILD_ANDROID.bat` completes with `SUCCESS`.
+
+## Render TypeScript build fix (2026-10-29)
+- Fixed `TS18047` in `backend/src/server.ts` in the admin user-block route by returning HTTP 404 if `findOneAndUpdate()` returns `null` before reading `user.blocked` or `user.userId`.
+- Validation limitation: the local `npm install` attempt timed out in this environment, so a full TypeScript build could not be completed here. Render should run `npm install && npm run build` on the updated commit.

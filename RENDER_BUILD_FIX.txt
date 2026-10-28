@@ -1,0 +1,10 @@
+GlobalChat Render build fix
+
+Fixed error:
+src/server.ts(691,7): error TS18047: 'user' is possibly 'null'.
+src/server.ts(691,35): error TS18047: 'user' is possibly 'null'.
+
+The admin block route now checks the result of findOneAndUpdate():
+if (!user) return res.status(404).json({ error: 'User not found.' });
+
+This must be pushed to the GitHub branch connected to Render. The ZIP itself does not change GitHub automatically.
