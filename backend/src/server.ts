@@ -18,6 +18,7 @@ import {
 } from './models';
 
 const app = express();
+app.set('trust proxy', 1); // Render runs behind a reverse proxy.
 const server = http.createServer(app);
 
 const origins = (process.env.CLIENT_ORIGINS || '')
