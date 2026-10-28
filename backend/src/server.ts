@@ -1,3 +1,4 @@
+
 import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import http from 'http';
@@ -680,20 +681,8 @@ app.patch('/api/admin/users/:userId/block', adminKey, asyncRoute(async (req, res
   const existing = await User.findOne({ userId: req.params.userId }).select('userId role');
   if (!existing) return res.status(404).json({ error: 'User not found.' });
   if (existing.role === 'admin') return res.status(400).json({ error: 'Administrator accounts cannot be blocked here.' });
-  const user = await User.findOneAndUpdate(
-    { userId: req.params.userId },
-    { $set: { blocked: parsed.data.blocked } },
-    { new: true }
-  ).select('userId blocked');
-
-  if (!user) {
-    return res.status(404).json({ error: 'User not found.' });
-  }
-
-  if (user.blocked) {
-    io.in(`user:${user.userId}`).disconnectSockets(true);
-  }
-
+  const user = await User.findOneAndUpdate({ userId: req.params.userId }, { $set: { blocked: parsed.data.blocked } }, { new: true }).select('userId blocked');
+  if (user.blocked) io.in(`user:${user.userId}`).disconnectSockets(true);
   return res.json({ user });
 }));
 
@@ -869,3 +858,4 @@ main().catch((error: unknown) => {
   console.error('Startup failed:', message);
   process.exit(1);
 });
+
